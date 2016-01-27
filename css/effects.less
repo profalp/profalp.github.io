@@ -1,0 +1,37 @@
+.inset-box-shadow(@horizontal-offset: 0, @vertical-offset: 0, @blur-radius: 20px, @spread-radius: 0, @color: rgba(0,0,0,0.3)) {
+	-moz-box-shadow:    inset @horizontal-offset @vertical-offset @blur-radius @spread-radius @color;
+	-webkit-box-shadow: inset @horizontal-offset @vertical-offset @blur-radius @spread-radius @color;
+	box-shadow:         inset @horizontal-offset @vertical-offset @blur-radius @spread-radius @color;
+}
+
+.box-shadow(@horizontal-offset: 0, @vertical-offset: 0, @blur-radius: 20px, @spread-radius: 0, @color: rgba(0,0,0,0.3)) {
+	-moz-box-shadow:    @horizontal-offset @vertical-offset @blur-radius @spread-radius @color;
+	-webkit-box-shadow: @horizontal-offset @vertical-offset @blur-radius @spread-radius @color;
+	box-shadow:         @horizontal-offset @vertical-offset @blur-radius @spread-radius @color;
+}
+
+.blur(@radius: 1px) {
+	-webkit-filter: blur(@radius);
+	-moz-filter: blur(@radius);
+	-o-filter: blur(@radius);
+	-ms-filter: blur(@radius);
+	filter: blur(@radius);
+}
+
+.nofilters() {
+	-webkit-filter: none;
+	-moz-filter: none;
+	filter: none;
+}
+
+.transition(@duration: 0.3s, @property: all, @function: ease) {
+	-moz-transition: @property @duration @function;
+	-o-transition: @property @duration @function;
+	-webkit-transition: @property @duration @function;
+}
+
+.border-radius(@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	border-radius: @radius;
+}

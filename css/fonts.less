@@ -1,0 +1,27 @@
+#pt-sans() {
+	.main		{ font-family: 'PT Sans'; }
+	.cond		{ font-family: 'PT Sans Narrow'; }
+	.caption	{ font-family: 'PT Sans Caption'; }
+}
+
+#open-sans() {
+	.main { font-family: 'Open Sans'; }
+	.cond { font-family: 'Open Sans Condensed'; }
+}
+
+#font() {
+	.main { #open-sans .main; }
+	.cond { #open-sans .cond; }
+	.caption { #pt-sans .caption; }
+
+	.light			{ font-weight: 300; }
+	.weight-normal	{ font-weight: 400; }
+	.semi-bold		{ font-weight: 600; }
+	.bold			{ font-weight: 700; }
+	.extra-bold		{ font-weight: 800; }
+
+	.style-normal	{ font-style: normal; }
+	.italic			{ font-style: italic; }
+
+	.bold-italic { .bold; .italic; }
+}

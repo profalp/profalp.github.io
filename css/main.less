@@ -1,0 +1,229 @@
+@import "reset.less";
+@import "flexbox.less";
+@import "fonts.less";
+@import "effects.less";
+
+.element() {
+	.border-radius(2px);
+	.box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.3));
+}
+
+@strict-buttons-background: rgba(40,90,150,0.9);
+@funny-buttons-background: rgba(240,120,30,0.9);
+@funny-buttons-hover-background: rgba(249, 66, 58, 0.9);
+@buttons-color: #ffffff;
+
+@page-background: rgba(255, 255, 255, 0.9);
+
+body {
+	background-color: #ffffff;
+	color: #000000;
+
+	#font .cond;
+	#font .light;
+	#font .style-normal;
+
+	font-size: 160%;
+}
+
+h1, h2, h3 {
+	#font .cond;
+	#font .light;
+	#font .style-normal;
+}
+
+h2 {
+	font-size: 230%;
+	color: @strict-buttons-background;
+}
+
+a {
+	color: #0000ff;
+}
+
+.button {
+	background-color: @funny-buttons-background;
+	color: @buttons-color;
+	.element;
+	padding: 0.3em 0.6em 0.3em 0.3em;
+	text-decoration: none;
+
+	.transition;
+
+	.icon {
+		font-size: 200%;
+	}
+
+	&, & .icon, & .label {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	&:hover {
+		background-color: @funny-buttons-hover-background;
+	}
+}
+
+.slide {
+	#flexbox .display;
+	#flexbox .direction-column;
+	justify-content: center;
+	align-items: center;
+
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:cover;
+
+	.inset-box-shadow(0, 0, 300px, 0, rgba(0, 0, 0, 0.7));
+}
+
+
+#about {
+	background-image: url("/img/bg/turbine.jpg");
+	background-position: center 35%;
+}
+
+#about-hostname {
+	background-image: url("/img/bg/glasswall.jpg");
+}
+
+
+#header {
+	text-align: center;
+
+	background-image: url('/img/bg/bridge.jpg');
+
+	&.slide {
+		height: 100%;
+	}
+
+	.next {
+		position: absolute;
+
+		width: 100%;
+		margin-top: 2em;
+		left: 0;
+
+		z-index: 1;
+	}
+
+	.header {
+		overflow: hidden;
+		z-index: 10;
+
+		font-size: 100%;
+		position: relative;
+		.element;
+
+		left: auto;
+		right: auto;
+
+		#menu {
+			font-size: 100%;
+			#font .cond;
+			ul {
+				list-style: none;
+				#flexbox .display;
+				#flexbox .direction-row;
+				justify-content: center;
+				align-items: center;
+
+				background-color: @strict-buttons-background;
+
+				a {
+					display: block;
+					padding: 0.5em;
+					text-decoration: none;
+					color: #ffffff;
+
+					&:hover {
+						background-color: @funny-buttons-hover-background;
+					}
+				}
+			}
+		}
+
+		.title {
+			#font .light;
+			font-size: 210%;
+			background-color: @page-background;
+			padding: 1.3em 1.5em 2em 1.5em;
+		}
+
+		.description {
+			position: absolute;
+			width: 100%;
+			margin-top: -3.6em;
+		}
+
+		&.sticky {
+			width: auto;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+
+			.box-shadow;
+
+			.title {
+				font-size: 130%;
+				padding: 0.5em 1em 0.5em 1em;
+				background-color: rgba(255, 255, 255, 1);
+			}
+
+			.description {
+				opacity: 0;
+				visibility: hidden;
+				margin-top: -1.5em;
+			}
+
+			#menu {
+				font-size: 100%;
+
+				ul {
+					//background-color: rgba(160,70,60,1);
+				}
+
+				a {
+					padding: 0.2em 0.5em;
+				}
+			}
+		}
+
+		&, & * {
+			.transition(1s);
+		}
+	}
+}
+
+.slide .article {
+	background-color: @page-background;
+	.element;
+	padding: 2em 2em 1em 2em;
+	max-width: 45em;
+	#font .cond;
+	#font .light;
+	font-size: 90%;
+
+	p {
+		margin: 1.5em 0 2em 0;
+
+		&.next {
+			text-align: center;
+		}
+	}
+}
+.slide .article,
+#footer {
+	font-size: 90%;
+}
+
+main {
+	height: 200%;
+
+	.slide {
+		height: 50%;
+	}
+}
+
+@import "footer.less";
