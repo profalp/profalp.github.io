@@ -1,0 +1,8 @@
+[submodule "deploy"]
+	path = deploy
+	url = git@github.com:profalp/profalp.github.io.git
+	branch = master
+[submodule "content"]
+	path = content
+	url = git@github.com:profalp/profalp.github.io.git
+	branch = content
