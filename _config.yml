@@ -1,5 +1,5 @@
 exclude: [README.md, content/README.md, content/CNAME]
-keep_files: [CNAME, .git, .gitignore]
+keep_files: [CNAME, README.md, .git, .gitignore]
 
 title: Центральный профессиональный союз промышленных альпинистов Российской Федерации
 title_short: Профсоюз промышленных альпинистов РФ
