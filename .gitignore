@@ -3,3 +3,5 @@ README.md
 img
 .sass-cache
 .jekyll-metadata
+/css/*
+!/css/main.css
