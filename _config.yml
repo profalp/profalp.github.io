@@ -1,4 +1,5 @@
 exclude: [content/README.md, content/CNAME]
+keep_files: [CNAME]
 
 title: Центральный профессиональный союз промышленных альпинистов Российской Федерации
 title_short: Профсоюз промышленных альпинистов РФ
