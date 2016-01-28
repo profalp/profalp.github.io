@@ -9,3 +9,6 @@
 [submodule "_includes/manifest"]
 	path = _includes/manifest
 	url = git@github.com:profalp/manifest.git
+[submodule "_includes/charter"]
+	path = _includes/charter
+	url = git@github.com:profalp/charter.git
