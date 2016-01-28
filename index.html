@@ -1,6 +1,7 @@
 ---
 layout: default
 permalink: /
+is_intro: true
 ---
 
 {% capture about %}{% include_relative _pages/about.md %}{% endcapture %}
@@ -9,34 +10,34 @@ permalink: /
 <div id="about" class="slide">
 	<article class="article about">
 		{{ about | markdownify }}
-		<p class="next">
-			<!--
-			<a href="#header" class="button scrollTo">
-				<i class="material-icons icon">&#xE5D8;</i>
-				<span class="label">Назад</span>
-			</a>
-			-->
-			<a href="#about-hostname" class="button scrollTo">
-				<i class="material-icons icon">&#xE5DB;</i>
-				<span class="label">Почему у сайта такой адрес</span>
-			</a>
-		</p>
 	</article>
+	<div class="next">
+		<!--
+		<a href="#header" class="button scroll-to">
+			<i class="material-icons icon">&#xE5D8;</i>
+			<span class="label">Назад</span>
+		</a>
+		-->
+		<a href="#about-hostname" class="button scroll-to">
+			<i class="material-icons icon">&#xE5DB;</i>
+			<span class="label">Почему у сайта такой адрес</span>
+		</a>
+	</div>
 </div>
 <div id="about-hostname" class="slide">
 	<article class="article about-hostname">
 		{{ about-hostname | markdownify }}
-		<p class="next">
-			<!--
-			<a href="#about" class="button scrollTo">
-				<i class="material-icons icon">&#xE5D8;</i>
-				<span class="label">Назад</span>
-			</a>
-			-->
-			<a href="#header" class="button scrollTo">
-				<i class="material-icons icon">&#xE5D8;</i>
-				<span class="label">Наверх</span>
-			</a>
-		</p>
 	</article>
+	<div class="next">
+		<!--
+		<a href="#header" class="button scroll-to">
+			<i class="material-icons icon">&#xE5D8;</i>
+			<span class="label">Назад</span>
+		</a>
+		-->
+		<a href="#header" class="button scroll-to">
+			<i class="material-icons icon">&#xE5D8;</i>
+			<span class="label">Наверх</span>
+		</a>
+	</div>
 </div>

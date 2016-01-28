@@ -1,0 +1,10 @@
+---
+layout: default
+permalink: /manifest/
+---
+
+{% capture manifest_path %}manifest/Манифест Центрального профессионального союза промышленных альпинистов Российской Федерации.md{% endcapture %}
+
+{% capture manifest %}{% include {{manifest_path}} %}{% endcapture %}
+
+{{ manifest | markdownify }}
