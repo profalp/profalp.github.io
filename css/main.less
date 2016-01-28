@@ -3,9 +3,11 @@
 @import "fonts.less";
 @import "effects.less";
 
-.element() {
-	.border-radius(2px);
-	.box-shadow(0, 2px, 5px, 0, rgba(0, 0, 0, 0.3));
+.slide-bg-settings() {
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:cover;
+	.inset-box-shadow(0, 0, 400px, 0, rgba(0, 0, 0, 0.9));
 }
 
 @strict-buttons-background: rgba(40,90,150,0.9);
@@ -15,40 +17,74 @@
 
 @page-background: rgba(255, 255, 255, 0.9);
 
+@bg-turbine: url("/img/bg/turbine.jpg");
+@bg-glasswall: url("/img/bg/glasswall.jpg");
+@bg-bridge: url("/img/bg/bridge.jpg");
+
 body {
 	background-color: #ffffff;
 	color: #000000;
 
-	#font .cond;
-	#font .light;
+	#font .main;
+	#font .weight-normal;
 	#font .style-normal;
 
-	font-size: 160%;
+	font-size: 110%;
+
+	&.regular-page {
+		background-image: @bg-bridge;
+		.slide-bg-settings;
+		height: auto;
+	}
 }
 
-h1, h2, h3 {
+.heading() {
 	#font .cond;
-	#font .light;
+	#font .weight-normal;
 	#font .style-normal;
 }
 
-h2 {
-	font-size: 230%;
-	color: @strict-buttons-background;
+h1, h2, h3, h4, h5, h6 {
+	.heading;
 }
 
 a {
 	color: #0000ff;
 }
 
-.button {
-	background-color: @funny-buttons-background;
-	color: @buttons-color;
-	.element;
-	padding: 0.3em 0.6em 0.3em 0.3em;
+.layout-common() {
+	.border-radius(2px);
+	.box-shadow-common;
+	/*
+	.button {
+		.box-shadow-clear;
+	}
+	*/
+}
+
+@button-font-size: 130%;
+
+.button-common(@font-size: @button-font-size, @background: @funny-buttons-background) {
+	#font .cond;
+	#font .light;
+
+	font-size: @font-size;
 	text-decoration: none;
 
+	color: @buttons-color;
+	background-color: @background;
+
+	&:hover {
+		background-color: @funny-buttons-hover-background;
+	}
+}
+
+.button {
+	.layout-common;
+	.button-common;
 	.transition;
+
+	padding: 0.3em 0.6em 0.3em 0.3em;
 
 	.icon {
 		font-size: 200%;
@@ -58,10 +94,6 @@ a {
 		display: inline-block;
 		vertical-align: middle;
 	}
-
-	&:hover {
-		background-color: @funny-buttons-hover-background;
-	}
 }
 
 .slide {
@@ -70,61 +102,49 @@ a {
 	justify-content: center;
 	align-items: center;
 
-	background-repeat: no-repeat;
-	background-attachment: fixed;
-	background-size:cover;
-
-	.inset-box-shadow(0, 0, 300px, 0, rgba(0, 0, 0, 0.7));
+	.slide-bg-settings;
 }
 
 
+
 #about {
-	// Turbine
-	background-image: url("/img/bg/turbine.jpg");
+	background-image: @bg-turbine;
 	background-position: center 35%;
 }
 
 #about-hostname {
-	// Glasswall
-	background-image: url("/img/bg/glasswall.jpg");
+	background-image: @bg-glasswall;
 }
-
 
 #header {
 	text-align: center;
 
-	// Bridge
-	background-image: url("/img/bg/bridge.jpg");
+	&.slide {
+		background-image: @bg-bridge;
+	}
 
 	&.slide {
 		height: 100%;
 	}
 
-	.next {
-		position: absolute;
-
-		width: 100%;
-		margin-top: 2em;
-		left: 0;
-
-		z-index: 1;
-	}
-
 	.header {
+		font-size: @button-font-size;
+
 		overflow: hidden;
 		z-index: 10;
 
-		font-size: 100%;
 		position: relative;
-		.element;
+
+		.intro-page & {
+			.layout-common;
+		}
 
 		left: auto;
 		right: auto;
 
 		#menu {
-			font-size: 100%;
-			#font .cond;
 			ul {
+				position: relative;
 				list-style: none;
 				#flexbox .display;
 				#flexbox .direction-row;
@@ -134,10 +154,9 @@ a {
 				background-color: @strict-buttons-background;
 
 				a {
+					.button-common(100%, none);
 					display: block;
 					padding: 0.5em;
-					text-decoration: none;
-					color: #ffffff;
 
 					&:hover {
 						background-color: @funny-buttons-hover-background;
@@ -147,31 +166,46 @@ a {
 		}
 
 		.title {
-			#font .light;
+			.heading;
 			font-size: 210%;
 			background-color: @page-background;
 			padding: 1.3em 1.5em 2em 1.5em;
+			margin: 0;
 		}
 
 		.description {
+			#open-sans .main;
+			#font .light;
 			position: absolute;
 			width: 100%;
 			margin-top: -3.6em;
 		}
 
-		&.sticky {
-			width: auto;
-			position: fixed;
-			top: 0;
-			left: 0;
-			right: 0;
+		.regular-page & {
+			position: static;
 
-			.box-shadow;
+			#menu {
+				z-index: 11;
+				position: absolute;
+				width: 100%;
+				.box-shadow;
 
+				&.sticky {
+					position: fixed;
+					width: 100%;
+					top: 0;
+				}
+			}
+		}
+
+		.regular-page &, &.sticky  {
 			.title {
+				position: relative;
 				font-size: 130%;
 				padding: 0.5em 1em 0.5em 1em;
-				background-color: rgba(255, 255, 255, 1);
+				//background-color: rgba(255, 255, 255, 1);
+
+				z-index: 12;
 			}
 
 			.description {
@@ -181,32 +215,69 @@ a {
 			}
 
 			#menu {
-				font-size: 100%;
-
-				ul {
-					//background-color: rgba(160,70,60,1);
-				}
-
 				a {
 					padding: 0.2em 0.5em;
 				}
 			}
 		}
 
-		&, & * {
+		&.sticky {
+			width: auto;
+
+			position: fixed;
+
+			top: 0;
+			left: 0;
+			right: 0;
+
+			.box-shadow;
+		}
+
+		.intro-page &, .intro-page & * {
 			.transition(1s);
 		}
 	}
 }
 
+.slide .next {
+	position: absolute;
+
+	width: 100%;
+	margin-top: 2em;
+	left: 0;
+
+	z-index: 1;
+	text-align: center;
+}
+
 .slide .article {
+	.layout;
+}
+
+#footer {
+}
+
+.header1() {
+	font-size: 230%;
+	margin: 0.2em 0 1em 0;
+}
+
+.header2() {
+	font-size: 150%;
+	margin: 1em 0 1em 0;
+
+	#pt-sans .cond;
+	#font .weight-normal;
+}
+
+
+
+
+.layout() {
+	.layout-common;
 	background-color: @page-background;
-	.element;
-	padding: 2em 2em 1em 2em;
+	padding: 2em 3em 1em 3em;
 	max-width: 45em;
-	#font .cond;
-	#font .light;
-	font-size: 90%;
 
 	p {
 		margin: 1.5em 0 2em 0;
@@ -216,13 +287,44 @@ a {
 		}
 	}
 }
-.slide .article,
-#footer {
-	font-size: 90%;
-}
 
 main {
-	height: 200%;
+	.intro-page & {
+		height: 200%;
+
+		h2 {
+			.header1;
+		}
+	}
+
+	.regular-page & {
+		margin: 4.8em auto 3em auto;
+		.layout;
+
+		h1 {
+			.header1;
+			line-height: 115%;
+		}
+
+		h2 {
+			.header2;
+		}
+
+		ul, ol {
+			margin-left: 1em;
+
+			li {
+				margin: 1em 0;
+				p {
+					margin: 0;
+				}
+			}
+		}
+	}
+
+	h1, h2 {
+
+	}
 
 	.slide {
 		height: 50%;
