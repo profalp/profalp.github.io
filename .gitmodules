@@ -6,3 +6,6 @@
 	path = content
 	url = git@github.com:profalp/profalp.github.io.git
 	branch = content
+[submodule "_includes/manifest"]
+	path = _includes/manifest
+	url = git@github.com:profalp/manifest.git
