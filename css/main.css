@@ -101,15 +101,15 @@ a {
   box-shadow: inset 0 0 300px 0 rgba(0, 0, 0, 0.7);
 }
 #about {
-  background-image: url("https://cloud.githubusercontent.com/assets/1121997/12642452/aa669156-c5d7-11e5-9ed7-5642f1b0e0b0.jpg");
+  background-image: url("/img/bg/turbine.jpg");
   background-position: center 35%;
 }
 #about-hostname {
-  background-image: url("https://cloud.githubusercontent.com/assets/1121997/12642457/b15f87ec-c5d7-11e5-8a39-de5502ef767f.jpg");
+  background-image: url("/img/bg/glasswall.jpg");
 }
 #header {
   text-align: center;
-  background-image: url("https://cloud.githubusercontent.com/assets/1121997/12642458/b17e1c66-c5d7-11e5-9cb8-45a6a12253d0.jpg");
+  background-image: url("/img/bg/bridge.jpg");
 }
 #header.slide {
   height: 100%;
