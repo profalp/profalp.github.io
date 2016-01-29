@@ -1,0 +1,13 @@
+---
+layout: default
+permalink: /charter/
+title: Устав
+---
+{% capture readme_path %}charter/README.md{% endcapture %}
+{% capture readme %}{% include {{readme_path}} %}{% endcapture %}
+
+{% capture charter_path %}charter/Устав Центрального профессионального союза промышленных альпинистов Российской Федерации.md{% endcapture %}
+{% capture charter %}{% include {{charter_path}} %}{% endcapture %}
+
+{{ readme | markdownify }}
+{{ charter | markdownify }}
