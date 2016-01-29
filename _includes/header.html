@@ -1,9 +1,11 @@
 <header id="header"{% if page.is_intro %} class="slide intro"{% endif %}>
 	<div class="header{% if page.is_intro == null %} regular{% endif %}">
-		<{% if page.is_intro %}h1{% else %}p{% endif %} class="title">
-			Профсоюз промышленных альпинистов РФ
-		</{% if page.is_intro %}h1{% else %}p{% endif %}>
-		<p class="description">Документы, мероприятия, информация.</p>
+		{% if page.is_intro %}
+		<h1 class="title">{{ site.title_short }}</h1>
+		{% else %}
+		<p class="title">{{ site.title_short }}</p>
+		{% endif %}
+		<p class="description">{{ site.description_short }}</p>
 		<nav id="menu">
 			<ul>
 				<li><a href="{{site.baseurl}}">Главная</a></li>

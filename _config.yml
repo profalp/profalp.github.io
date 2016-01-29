@@ -3,27 +3,21 @@ keep_files: [CNAME, README.md, .git, .gitignore]
 
 title: Центральный профессиональный союз промышленных альпинистов Российской Федерации
 title_short: Профсоюз промышленных альпинистов РФ
-email: prof@goodclimbers.ru
-description: > # this means to ignore newlines until "baseurl:"
-    Write an awesome description for your new site here. You can edit this
-    line in _config.yml. It will appear in your document head meta (for
-    Google search results) and in your feed.xml site description.
+description: Официальный сайт Центрального профессионального союза промышленных альпинистов Российской Федерации. Документы и новости организации и сообщества в целом.
 
+description_short: Документы и новости организации и сообщества в целом.
 
-baseurl: "/" # the subpath of your site, e.g. /blog
-url: "http://profalp.goodclimbers.ru" # the base hostname & protocol for your site
-twitter_username: jekyllrb
-github_username:  jekyll
+keywords: промышленный альпинизм, промальп, промальпинизм, высотные работы, професиональный союз, профсоюз, rope access
 
-# Build settings
+email: profalp@goodclimbers.ru
+
+baseurl: "/"
+url: "http://profalp.goodclimbers.ru"
+
 markdown: kramdown
 
 source:       .
 destination:  deploy
-#data_dir:     content/_data
-#plugins_dir:  /template/plugins
-#layouts_dir:  _layouts
-#includes_dir: './site-template/includes'
 
 timezone: Europe/Moscow
 
