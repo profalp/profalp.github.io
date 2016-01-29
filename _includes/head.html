@@ -1,8 +1,38 @@
 <head>
 	<meta charset="utf-8">
+	{% capture image_src %}{{site.url}}{{site.baseurl}}img/bg/turbine.jpg{% endcapture %}
 
-	<meta name="description" content="{{ site.description }}">
-	<meta name="keywords" content="{{ site.keywords }}">
+	{% if page.description %}
+	{% capture description %}{{ page.description }}{% endcapture %}
+	{% else %}
+	{% capture description %}{{ site.description }}{% endcapture %}
+	{% endif %}
+
+	{% if page.keywords %}
+	{% capture keywords %}{{ page.keywords }}{% endcapture %}
+	{% else %}
+	{% capture keywords %}{{ site.keywords }}{% endcapture %}
+	{% endif %}
+
+	<meta name="description" content="{{ description }}">
+	<meta name="keywords" content="{{ keywords }}">
+	<link rel="image_src" href="{{ image_src }}">
+
+	<meta property="og:site_name" content="{{ site.title }}">
+
+	{% if page.type %}
+	<meta property="og:type" content="{{ page.type }}">
+	{% else %}
+	<meta property="og:type" content="website">
+	{% endif %}
+
+	{% if page.title %}
+	<meta property="og:title" content="{{ page.title }}">
+	{% endif %}
+
+	<meta property="og:description" content="{{ description }}">
+
+	<meta property="og:image" content="{{ image_src }}">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -10,11 +40,14 @@
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:400,800italic,700italic,600italic,400italic,300italic,800,700,600,300&subset=latin,cyrillic" rel="stylesheet" type="text/css">
 
 	<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
-	{% if page.is_intro %}<script src="{{site.baseurl}}js/intro.js"></script>
-	{% else %}<script src="{{site.baseurl}}js/regular-page.js"></script>
+	{% if page.is_intro %}
+	<script src="{{site.baseurl}}js/intro.js"></script>
+	{% else %}
+	<script src="{{site.baseurl}}js/regular-page.js"></script>
 	{% endif %}
 
 	<link rel="stylesheet" href="{{site.baseurl}}css/main.css">
 
-	<title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title_short }}</title>
+	{% capture title %}{% if page.title_short %}{{ page.title_short }} — {% endif %}{{ site.title_short }}{% endcapture %}
+	<title>{{ title }}</title>
 </head>
