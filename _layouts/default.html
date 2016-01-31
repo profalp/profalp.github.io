@@ -2,6 +2,7 @@
 <html lang="ru">
 {% include head.html %}
 	<body class="{% if page.is_intro %}intro{% else %}regular{% endif %}-page">
+		{% include ad/metrika.html %}
 		{% include header.html %}
 		<main>
 			{{ content }}
