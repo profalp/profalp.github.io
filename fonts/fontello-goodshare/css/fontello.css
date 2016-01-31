@@ -1,0 +1,47 @@
+@font-face {
+  font-family: 'fontello';
+  src: url('/fonts/fontello-goodshare/font/fontello.eot?53514568');
+  src: url('/fonts/fontello-goodshare/font/fontello.eot?53514568#iefix') format('embedded-opentype'),
+       url('/fonts/fontello-goodshare/font/fontello.woff?53514568') format('woff'),
+       url('/fonts/fontello-goodshare/font/fontello.ttf?53514568') format('truetype'),
+       url('/fonts/fontello-goodshare/font/fontello.svg?53514568#fontello') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  @font-face {
+    font-family: 'fontello';
+    src: url('/fonts/fontello-goodshare/font/fontello.svg?53514568#fontello') format('svg');
+  }
+}
+
+/*
+.icon-twitter:before { content: '\e800'; }
+.icon-vkontakte:before { content: '\e801';
+.icon-buffer:before { content: '\e802'; }
+.icon-blogger:before { content: '\e803'; }
+.icon-evernote:before { content: '\e804'; }
+.icon-pinterest:before { content: '\e805'; }
+.icon-facebook:before { content: '\e806'; }
+.icon-odnoklassniki:before { content: '\e807'; }
+.icon-reddit:before { content: '\e808'; }
+.icon-digg:before { content: '\e809'; }
+.icon-tumblr:before { content: '\e80a'; }
+.icon-linkedin:before { content: '\e80b'; }
+.icon-pocket:before { content: '\e80c'; }
+.icon-moimir:before { content: '\e80d'; }
+.icon-google-plus:before { content: '\e80e'; }
+.icon-livejournal:before { content: '\e80f'; }
+.icon-surfingbird:before { content: '\e810'; }
+.icon-stumbleupon:before { content: '\e811'; }
+.icon-readability:before { content: '\e812'; }
+.icon-delicious:before { content: '\e813'; }
+.icon-instapaper:before { content: '\e814'; }
+.icon-xing:before { content: '\e815'; }
+.icon-viber:before { content: '\e816'; }
+.icon-whatsapp:before { content: '\e817'; }
+.icon-line:before { content: '\e818'; }
+.icon-telegram:before { content: '\e819'; }
+.icon-wordpress:before { content: '\e81a'; }
+*/
