@@ -1,6 +1,7 @@
 [manifest-repo]: https://github.com/profalp/manifest "Репозиторий Манифеста на GitHub"
-[manifest-text]: https://github.com/profalp/manifest "Текст последней версии Манифеста"
+[manifest-text]: {{site.baseurl}}docs/manifest "Текст последней версии Манифеста"
 [charter-repo]: https://github.com/profalp/charter "Репозиторий Устава на GitHub"
+[charter-text]: {{site.baseurl}}docs/charter "Текст последней версии Устава"
 
 ## Чем мы здесь занимаемся
 
