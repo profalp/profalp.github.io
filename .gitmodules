@@ -12,3 +12,6 @@
 [submodule "_includes/charter"]
 	path = _includes/charter
 	url = git@github.com:profalp/charter.git
+[submodule "fonts/md-webfont"]
+	path = fonts/md-webfont
+	url = https://github.com/Templarian/MaterialDesign-Webfont.git

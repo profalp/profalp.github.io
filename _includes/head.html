@@ -1,87 +1,18 @@
 <head prefix="og: http://ogp.me/ns# article: http://ogp.me/ns/article# profile: http://ogp.me/ns/profile#">
+	<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+
 	<meta charset="utf-8">
+
 	{% capture image_src %}{{site.url}}{{site.baseurl}}img/bg/glasswall.jpg{% endcapture %}
 
-	{% if page.description %}
-	<meta name="description" content="{{ page.description }}">
-	{% else %}
-	<meta name="description" content="{{ site.description }}">
-	{% endif %}
-
-	{% if page.keywords %}
-	<meta name="keywords" content="{{ page.keywords }}">
-	{% else %}
-	<meta name="keywords" content="{{ site.keywords }}">
-	{% endif %}
-	<link rel="canonical" href="{{ site.url }}{{ page.url }}">
-	<link rel="image_src" href="{{ image_src }}">
-
-	<!-- Open Graph -->
-
-	<meta property="og:url" content="{{ site.url }}{{ page.url }}">
-	<meta property="og:site_name" content="{{ site.title_short }}">
-	<meta property="og:locale" content="ru_RU">
-
-	{% if page.type %}
-	<meta property="og:type" content="{{ page.type }}">
-	{% else %}
-	<meta property="og:type" content="website">
-	{% endif %}
-
-	{% if page.title %}
-	<meta property="og:title" content="{{ page.title }}">
-	{% else %}
-	<meta property="og:title" content="{{ site.title }}">
-	{% endif %}
-
-	{% if page.description %}
-	<meta property="og:description" content="{{ page.description }}">
-	{% else %}
-	<meta property="og:description" content="{{ site.description }}">
-	{% endif %}
-
-	<meta property="og:image" content="{{ image_src }}">
-
-	{% if page.type == 'aticle' %}{% if page.published_time %}
-	<meta property="article:published_time" content="{{ page.published_time }}">
-	{% endif %}{% if page.modified_time %}
-	<meta property="article:modified_time" content="{{ page.modified_time }}">
-	{% endif %}{% if page.section %}
-	<meta property="article:section" content="{{ page.section }}">
-	{% endif %}{% endif %}
-
-	<!-- / Open Graph -->
-
-	<!-- Twitter Cards -->
-
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@{{ site.twitter }}">
-	{% if page.twitter_creator %}
-	<meta name="twitter:creator" content="@{{ page.twitter_creator }}">
-	{% endif %}
-
-	{% if page.title %}
-	<meta name="twitter:title" content="{{ page.title }}">
-	{% else %}
-	<meta name="twitter:title" content="{{ site.title }}">
-	{% endif %}
-
-	{% if page.description %}
-	<meta name="twitter:description" content="{{ page.description }}">
-	{% else %}
-	<meta name="twitter:description" content="{{ site.description }}">
-	{% endif %}
-
-	<meta name="twitter:image:src" content="{{ image_src }}">
-
-	<!-- / Twitter Cards -->
+	{% include semantic/open-graph.html %}
+	{% include semantic/twitter-cards.html %}
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|PT+Sans+Narrow:400,700|PT+Sans+Caption:400,700&subset=latin,cyrillic,cyrillic-ext,latin-ext" rel="tylesheet" type="text/css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700,300italic|Open+Sans:400,800italic,700italic,600italic,400italic,300italic,800,700,600,300&subset=latin,cyrillic" rel="stylesheet" type="text/css">
 
 	<script src="http://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.5/goodshare.min.js"></script>
+
 	{% if page.is_intro %}
 	<script src="{{site.baseurl}}js/intro.js"></script>
 	{% else %}
@@ -90,6 +21,5 @@
 
 	<link rel="stylesheet" href="{{site.baseurl}}css/main.css">
 
-	{% capture title %}{% if page.title_short %}{{ page.title_short }} — {% endif %}{{ site.title_short }}{% endcapture %}
-	<title>{{ title }}</title>
+	<title>{% if page.title_short %}{{ page.title_short }} — {% endif %}{{ site.title_short }}</title>
 </head>

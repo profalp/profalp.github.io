@@ -10,6 +10,76 @@
 	.inset-box-shadow(0, 0, 400px, 0, rgba(0, 0, 0, 0.9));
 }
 
+.social-buttons {
+	font-size: 100%;
+	width: 100%;
+	text-align: center;
+
+	.regular-page & {
+		margin: 0 0 0 0;
+		padding-bottom: 7.5em;
+	}
+
+	cursor: default;
+
+	#header & {
+		position: absolute;
+		z-index: 20;
+		left: 0;
+		top: -2.7em;
+
+		.icon {
+			opacity: 0.5;
+			&:hover {
+				opacity: 1;
+				background-color: @page-background;
+			}
+		}
+	}
+
+	& .bar, &.bar {
+		list-style: none;
+
+		li {
+			display: inline-block;
+		}
+
+		.icon {
+			font-size: 100%;
+			font-family: "fontello";
+			display: inline-block;
+			border: none;
+			.layout-common;
+
+			margin: 0;
+			padding: 0;
+
+			width: 2em;
+			height: 2em;
+
+			text-align: center;
+			vertical-align: middle;
+
+			font-variant: normal;
+			text-transform: none;
+
+			line-height: 1em;
+			-webkit-font-smoothing: antialiased;
+			-moz-osx-font-smoothing: grayscale;
+
+			background-color: @page-background;
+			color: #000000;
+
+			cursor: pointer;
+
+			&:hover {
+				background-color: @funny-buttons-background;
+			}
+		}
+	}
+}
+
+@layout-border-radius: 2px;
 @strict-buttons-background: rgba(40,90,150,0.9);
 @funny-buttons-background: rgba(240,120,30,0.9);
 @funny-buttons-hover-background: rgba(249, 66, 58, 0.9);
@@ -33,8 +103,11 @@ body {
 
 	&.regular-page {
 		background-image: @bg-bridge;
+		background-position: center;
 		.slide-bg-settings;
 		height: auto;
+
+		min-height: 100%;
 	}
 }
 
@@ -49,11 +122,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 a {
-	color: #0000ff;
+	color: @strict-buttons-background;
+
+	&:hover {
+		color: @funny-buttons-hover-background;
+	}
 }
 
 .layout-common() {
-	.border-radius(2px);
+	.border-radius(@layout-border-radius);
 	.box-shadow-common;
 	/*
 	.button {
@@ -114,13 +191,16 @@ a {
 
 #about-hostname {
 	background-image: @bg-glasswall;
+	background-position: center;
 }
 
 #header {
+	position: relative;
 	text-align: center;
 
 	&.slide {
 		background-image: @bg-bridge;
+		background-position: center;
 	}
 
 	&.slide {
@@ -130,7 +210,6 @@ a {
 	.header {
 		font-size: @button-font-size;
 
-		overflow: hidden;
 		z-index: 10;
 
 		position: relative;
@@ -162,11 +241,14 @@ a {
 						background-color: @funny-buttons-hover-background;
 					}
 				}
+
+				.border-radius(0 0 @layout-border-radius @layout-border-radius);
 			}
 		}
 
 		.title {
 			.heading;
+			.border-radius(@layout-border-radius @layout-border-radius 0 0);
 			font-size: 210%;
 			background-color: @page-background;
 			padding: 1.3em 1.5em 2em 1.5em;
@@ -210,7 +292,6 @@ a {
 
 			.description {
 				opacity: 0;
-				visibility: hidden;
 				margin-top: -1.5em;
 			}
 
@@ -298,7 +379,7 @@ main {
 	}
 
 	.regular-page & {
-		margin: 4.8em auto 3em auto;
+		margin: 4.8em auto 1em auto;
 		.layout;
 
 		h1 {
@@ -331,4 +412,42 @@ main {
 	}
 }
 
-@import "footer.less";
+#footer {
+	color: #99aabb;
+
+	position: absolute;
+	width: 100%;
+
+	.intro-page & {
+		margin-top: -5.5em;
+		padding: 0;
+	}
+
+	.regular-page & {
+		bottom: 0;
+		padding: 0 0 1em 0;
+	}
+
+	a {
+		color: #ddeeff;
+
+		&:hover {
+			color: @funny-buttons-hover-background;
+		}
+	}
+
+	#font .weight-normal;
+
+	.wrapper {
+		margin: auto;
+		max-width: 45em;
+
+		p, ul {
+			font-size: 60%;
+		}
+
+		ul {
+			padding-left: 1em;
+		}
+	}
+}

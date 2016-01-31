@@ -2,13 +2,12 @@
 <html lang="ru">
 {% include head.html %}
 	<body class="{% if page.is_intro %}intro{% else %}regular{% endif %}-page">
-
 		{% include header.html %}
-
 		<main>
 			{{ content }}
+			{% if page.comments %}{% include comments.html %}{% endif %}
 		</main>
-
+		{% unless page.is_intro %}{% include social-buttons.html %}{% endunless %}
 		{% include footer.html %}
 	</body>
 </html>

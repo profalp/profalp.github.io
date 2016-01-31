@@ -1,5 +1,22 @@
-exclude: [README.md, content/README.md, content/CNAME]
-keep_files: [CNAME, README.md, .git, .gitignore]
+exclude:
+    - README.md
+    - content/README.md
+    - content/CNAME
+    - fonts/md-webfont/scss
+    - fonts/md-webfont/css/materialdesignicons.css
+    - fonts/md-webfont/css/materialdesignicons.css.map
+    - fonts/md-webfont/css/materialdesignicons.min.css.map
+    - fonts/md-webfont/.git
+    - fonts/md-webfont/bower.json
+    - fonts/md-webfont/license.txt
+    - fonts/md-webfont/package.json
+    - fonts/md-webfont/preview.html
+    - fonts/md-webfont/README.md
+keep_files:
+    - CNAME
+    - README.md
+    - .git
+    - .gitignore]
 
 title: Центральный профессиональный союз промышленных альпинистов Российской Федерации
 title_short: Профсоюз промышленных альпинистов РФ
