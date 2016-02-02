@@ -20,6 +20,10 @@
 		padding-bottom: 7.5em;
 	}
 
+	.label {
+		display: none;
+	}
+
 	cursor: default;
 
 	#header & {
@@ -153,36 +157,20 @@ a {
 
 	&:hover {
 		background-color: @funny-buttons-hover-background;
-	}
-}
-
-.button {
-	.layout-common;
-	.button-common;
-	.transition;
-
-	padding: 0.3em 0.6em 0.3em 0.3em;
-
-	.icon {
-		font-size: 200%;
-	}
-
-	&, & .icon, & .label {
-		display: inline-block;
-		vertical-align: middle;
+		color: @buttons-color;
 	}
 }
 
 .slide {
 	#flexbox .display;
 	#flexbox .direction-column;
+	-webkit-justify-content: center;
 	justify-content: center;
+	-webkit-align-items: center;
 	align-items: center;
 
 	.slide-bg-settings;
 }
-
-
 
 #about {
 	background-image: @bg-turbine;
@@ -222,7 +210,14 @@ a {
 		right: auto;
 
 		#menu {
-			ul {
+			background-color: @strict-buttons-background;
+			.border-radius(0 0 @layout-border-radius @layout-border-radius);
+
+			.open-button {
+				display: none;
+			}
+
+			.buttons {
 				position: relative;
 				list-style: none;
 				#flexbox .display;
@@ -230,19 +225,17 @@ a {
 				justify-content: center;
 				align-items: center;
 
-				background-color: @strict-buttons-background;
-
-				a {
+				.button {
 					.button-common(100%, none);
 					display: block;
 					padding: 0.5em;
+
+					white-space: nowrap;
 
 					&:hover {
 						background-color: @funny-buttons-hover-background;
 					}
 				}
-
-				.border-radius(0 0 @layout-border-radius @layout-border-radius);
 			}
 		}
 
@@ -251,16 +244,15 @@ a {
 			.border-radius(@layout-border-radius @layout-border-radius 0 0);
 			font-size: 210%;
 			background-color: @page-background;
-			padding: 1.3em 1.5em 2em 1.5em;
+			padding: 1.3em 1.5em 0.3em 1.5em;
 			margin: 0;
 		}
 
 		.description {
 			#open-sans .main;
 			#font .light;
-			position: absolute;
-			width: 100%;
-			margin-top: -3.6em;
+			background-color: @page-background;
+			padding: 0 1em 2.4em 1em;
 		}
 
 		.regular-page & {
@@ -271,6 +263,8 @@ a {
 				position: absolute;
 				width: 100%;
 				.box-shadow;
+
+				.border-radius(0);
 
 				&.sticky {
 					position: fixed;
@@ -285,14 +279,17 @@ a {
 				position: relative;
 				font-size: 130%;
 				padding: 0.5em 1em 0.5em 1em;
-				//background-color: rgba(255, 255, 255, 1);
 
 				z-index: 12;
 			}
 
 			.description {
+				height: 0px;
+				padding-top: 0;
+				padding-bottom: 0;
+				overflow: hidden;
+				color: rgba(255, 255, 255, 0);
 				opacity: 0;
-				margin-top: -1.5em;
 			}
 
 			#menu {
@@ -329,13 +326,27 @@ a {
 
 	z-index: 1;
 	text-align: center;
+
+	.button {
+		.layout-common;
+		.button-common;
+		.transition;
+
+		padding: 0.3em 0.6em 0.3em 0.3em;
+
+		.icon {
+			font-size: 200%;
+		}
+
+		&, & .icon, & .label {
+			display: inline-block;
+			vertical-align: middle;
+		}
+	}
 }
 
 .slide .article {
 	.layout;
-}
-
-#footer {
 }
 
 .header1() {
@@ -448,6 +459,246 @@ main {
 
 		ul {
 			padding-left: 1em;
+		}
+	}
+}
+
+@media (max-width: 720px) {
+	body {
+		font-size: 100%;
+	}
+
+	.slide {
+		.inset-box-shadow(0, 0, 200px, 0, rgba(0, 0, 0, 0.9));
+	}
+
+	.intro-page {
+		#about-hostname {
+			padding-bottom: 17em;
+		}
+		main, #about, #about-hostname {
+			height: auto;
+			h2 {
+				line-height: 1.2em;
+				font-size: 170%;
+			}
+		}
+	}
+
+
+	#about, #about-hostname {
+		padding: 4em 1em 8em 1em;
+
+		.article {
+			padding: 1em;
+		}
+	}
+
+	#about-hostname {
+		padding-bottom: 10em;
+	}
+
+	.regular-page  {
+		.social-buttons {
+			margin: 0 0 0 0;
+			padding-bottom: 10.5em;
+		}
+
+		main {
+			margin-left: 1em;
+			margin-right: 1em;
+			padding-left: 1em;
+			padding-right: 1em;
+			h1, h2 {
+				line-height: 1.2em;
+			}
+
+			h1 {
+				font-size: 170%;
+			}
+
+			h2 {
+				font-size: 130%;
+			}
+		}
+	}
+
+	#header {
+		.intro-page & {
+			padding: 0 1em 0 1em;
+
+			.social-buttons {
+				top: auto;
+				margin-top: -2.7em;
+			}
+		}
+
+		.header {
+			width: 100%;
+
+			position: static;
+
+			&.sticky {
+				position: static;
+			}
+
+			.intro-page &.sticky {
+				.title {
+					position: relative;
+					width: auto;
+					z-index: 0;
+					padding: 1.3em 1.5em 0.3em 1.5em;
+					//opacity: 0;
+					//height: 0px;
+					//padding: 0;
+				}
+				.description {
+					height: auto;
+					padding: 0 1em 2.4em 1em;
+					opacity: 1;
+					color: #000000;
+				}
+			}
+
+			.title {
+				font-size: 130%;
+				line-height: 120%;
+
+				.regular-page & {
+					.border-radius(0);
+				}
+			}
+
+			.description {
+				font-size: 75%;
+				line-height: 120%;
+				.border-radius(0 0 @layout-border-radius @layout-border-radius);
+			}
+
+			#menu {
+				.border-radius(0px);
+				.box-shadow-common;
+
+				position: relative;
+
+				z-index: 21;
+
+				.intro-page & {
+					position: fixed;
+					left: 0;
+					top: 0;
+					right: 0;
+				}
+
+				.open-button {
+					color: #ffffff;
+					#font .cond;
+					#font .light;
+					display: block;
+					background: none;
+					border: none;
+					margin: 0;
+					padding: 0.5em 0.5em;
+
+					font-size: 110%;
+
+					text-align: left;
+
+					vertical-align: text-top;
+
+					line-height: 100%;
+
+					cursor: pointer;
+
+					&:before {
+						vertical-align: bottom;
+						display: inline-block;
+						content: '\e5d2';
+						font-family: 'Material Icons';
+						font-style: normal;
+						font-weight: 400;
+						font-size: 142%;
+						padding: 0 0 0.03em 0;
+						margin: 0 10px 0 0;
+					}
+
+					&:focus,
+					&::-moz-focus-inner {
+						outline: none;
+						border: none;
+					}
+				}
+
+				.buttons {
+					display: block;
+
+					height: 0px;
+					overflow: hidden;
+
+					.button-box {
+						display: block;
+						text-align: left;
+					}
+				}
+
+				&.opened {
+					.buttons {
+						height: auto;
+					}
+				}
+			}
+		}
+	}
+
+	#footer {
+		.intro-page &, .regular-page & {
+			width: auto;
+		}
+
+		.regular-page & {
+			padding: 1em;
+		}
+
+		.intro-page & {
+			padding: 0 1em;
+			margin: -10em 0 0 0;
+		}
+	}
+}
+
+@media (max-width: 359px), (max-height: 359px) {
+	#header {
+
+		.header {
+			.title {
+				padding: 0.8em 0.5em 0.5em 0.5em;
+				line-height: 1em;
+			}
+
+			.description {
+				padding-bottom: 1em;
+				line-height: 1em;
+			}
+
+			.intro-page &.sticky {
+				.title {
+					padding: 0.8em 0.5em 0.5em 0.5em;
+					line-height: 1em;
+				}
+
+				.description {
+					padding-bottom: 1em;
+					line-height: 1em;
+				}
+			}
+		}
+
+		.next {
+			margin-top: 1em;
+		}
+
+		.social-buttons {
+			font-size: 85%;
 		}
 	}
 }

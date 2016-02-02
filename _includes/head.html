@@ -2,9 +2,7 @@
 	<!--[if lt IE 9]><script language="javascript" type="text/javascript" src="//html5shim.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 
 	<meta charset="utf-8">
-
-	{% capture image_src %}{{site.url}}{{site.baseurl}}img/bg/glasswall.jpg{% endcapture %}
-
+	{% capture image_src %}{{site.url}}{{site.baseurl}}/img/bg/glasswall.jpg{% endcapture %}
 	{% include semantic/open-graph.html %}
 	{% include semantic/twitter-cards.html %}
 
@@ -14,12 +12,14 @@
 	<script src="https://cdn.jsdelivr.net/jquery.goodshare.js/3.2.5/goodshare.min.js"></script>
 
 	{% if page.is_intro %}
-	<script src="{{site.baseurl}}js/intro.js"></script>
+	<script src="{{site.baseurl}}/js/intro.js"></script>
 	{% else %}
-	<script src="{{site.baseurl}}js/regular-page.js"></script>
+	<script src="{{site.baseurl}}/js/regular-page.js"></script>
 	{% endif %}
 
-	<link rel="stylesheet" href="{{site.baseurl}}css/main.css">
+	{% include fonts.html %}
+
+	<link rel="stylesheet" href="{{site.baseurl}}/css/main.css">
 
 	<title>{% if page.title_short %}{{ page.title_short }} — {% endif %}{{ site.title_short }}</title>
 </head>

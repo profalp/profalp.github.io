@@ -19,17 +19,17 @@ keep_files:
     - .gitignore]
 
 title: Центральный профессиональный союз промышленных альпинистов Российской Федерации
-title_short: Профсоюз промышленных альпинистов РФ
+title_short: Профсоюз промышленных альпинистов России
 description: Официальный сайт профсоюза. Документы и новости организации и сообщества в целом.
 
-description_short: Документы и новости организации и сообщества в целом.
+description_short: Документы и новости организации и сообщества в целом.
 
 keywords: промышленный альпинизм, промальп, промальпинизм, высотные работы, професиональный союз, профсоюз, rope access
 
 email: profalp@goodclimbers.ru
 twitter: profalprussia
 
-baseurl: "/"
+baseurl: ""
 url: "http://profalp.goodclimbers.ru"
 
 markdown: kramdown

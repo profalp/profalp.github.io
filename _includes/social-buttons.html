@@ -1,9 +1,9 @@
 {% capture social_title %}{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}{% endcapture %}
 
 <aside class="social-buttons">
-	<!-- <p class="label">
+	<p class="label">
 		Поделиться:
-	</p> -->
+	</p>
 	<ul class="bar">
 		<li>
 			<button class="icon goodshare" data-type="vk" data-title="{{ social_title }}" title="В Контакте">&#xe801;</button>
@@ -26,19 +26,19 @@
 		<li>
 			<button class="icon goodshare" data-type="li" data-title="{{ social_title }}" title="LinkedIn">&#xe80b;</button>
 		</li>
-		<!--
-		<li>
-			<button class="icon goodshare" data-type="tg" data-title="{{ social_title }}" title="Telegram">&#xe819;</button>
-		</li>
-		<li>
-			<button class="icon goodshare" data-type="vi" data-title="{{ social_title }}" title="Viber">&#xe816;</button>
-		</li>
-		<li>
-			<button class="icon goodshare" data-type="wa" data-title="{{ social_title }}" title="WhatsApp">&#xe817;</button>
-		</li>
-		<li>
-			<button class="icon goodshare" data-type="ln" data-title="{{ social_title }}" title="LINE">&#xe818;</button>
-		</li>
-		-->
+		{% comment %}
+			<li>
+				<button class="icon goodshare" data-type="tg" data-title="{{ social_title }}" title="Telegram">&#xe819;</button>
+			</li>
+			<li>
+				<button class="icon goodshare" data-type="vi" data-title="{{ social_title }}" title="Viber">&#xe816;</button>
+			</li>
+			<li>
+				<button class="icon goodshare" data-type="wa" data-title="{{ social_title }}" title="WhatsApp">&#xe817;</button>
+			</li>
+			<li>
+				<button class="icon goodshare" data-type="ln" data-title="{{ social_title }}" title="LINE">&#xe818;</button>
+			</li>
+		{% endcomment %}
 	</ul>
 </aside>
